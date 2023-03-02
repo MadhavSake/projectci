@@ -4,6 +4,7 @@ pipeline {
         registry = "public.ecr.aws/m4s6d1u3/ecrrepo"
     }
     
+    stages {
     stage('Building image') {
       steps{
         script {
@@ -23,4 +24,5 @@ pipeline {
        } 
      }      
    }
+ }
       
