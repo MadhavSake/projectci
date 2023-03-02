@@ -17,8 +17,6 @@ pipeline {
      steps{  
          script {
                 sh 'aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/m4s6d1u3'
-                sh 'docker build -t ecrrepo .'
-                sh 'docker tag ecrrepo:latest public.ecr.aws/m4s6d1u3/ecrrepo:latest'
                 sh 'docker push public.ecr.aws/m4s6d1u3/ecrrepo:latest'
          }
        } 
